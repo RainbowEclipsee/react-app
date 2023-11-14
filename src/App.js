@@ -1,5 +1,6 @@
 // import CostItem from './components/CostItem'
 import MainCosts from './components/Costs/MainCosts'
+import NewCost from './components/NewCost/NewCost'
 
 const App = () => {
   const arrCost = [
@@ -22,7 +23,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Start Page</h1>
+      <NewCost />
       <MainCosts prmArrCost={arrCost} />
     </div>
   )
