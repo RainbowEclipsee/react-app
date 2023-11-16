@@ -21,9 +21,14 @@ const App = () => {
     },
   ]
 
+  const saveNewCostDataHandler = (newData) => {
+    console.log('App')
+    console.log(newData)
+  }
+
   return (
     <div>
-      <NewCost />
+      <NewCost onSaveNewCostData={saveNewCostDataHandler} />
       <MainCosts prmArrCost={arrCost} />
     </div>
   )
