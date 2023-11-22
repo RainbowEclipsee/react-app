@@ -49,16 +49,18 @@ const CostForm = (props) => {
 
     //Обновленное состояние
     const costData = {
-      updName: name,
-      updPrice: price,
-      updDate: new Date(date),
+      name: name,
+      price: price,
+      date: new Date(date),
     }
+    //сука. -_-
+    //Место на запомнить - нехуй с объектами хуевертить.
 
     //Передаем данные из дочернего компонента input в родителя NewCost
     props.onSaveCostFormData(costData)
-    setName()
-    setPrice()
-    setDate()
+    setName('')
+    setPrice('')
+    setDate('')
   }
 
   return (
