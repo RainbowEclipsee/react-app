@@ -18,7 +18,7 @@ const arrCosts = [
   },
   {
     id: '3',
-    date: new Date(2023, 11, 9),
+    date: new Date(2022, 11, 9),
     descrition: 'Ботинки dr.marteens',
     price: 416,
   }

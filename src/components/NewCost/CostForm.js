@@ -49,7 +49,7 @@ const CostForm = (props) => {
 
     //Обновленное состояние
     const costData = {
-      name: name,
+      descrition: name,
       price: price,
       date: new Date(date),
     }

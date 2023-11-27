@@ -12,19 +12,30 @@ const MainCosts = (props) => {
     setChangeYear(setYear)
   }
 
+  //Фильтр по дате массива
+  const arrCostsFilter = props.prmArrCosts.filter(cost => {
+    return cost.date.getFullYear().toString() === changeYear;
+  })
+  // Отрисовываем новый массив из существующего через map 
+  let filteredContent = 
+    arrCostsFilter.length === 0 ? 
+    <b style={{color:'#2a5b84'}}> В этом году расходы отсутствуют </b> :
+    arrCostsFilter.map((cost) => (
+      <CostItem
+        key={cost.id}
+        date={cost.date}
+        descrition={cost.descrition}
+        price={cost.price}
+      />
+  ))
+
   return (
     <div>
       <Card className="costs">
         {/* Д.С year={changeYear} */}
         <CostsFilter year={changeYear} onChangeYear={yearChangeHandler} />
         {/* Отрисовываем новый массив из существующего через map */}
-        {props.prmArrCosts.map((cost) => (
-          <CostItem
-            date={cost.date}
-            descrition={cost.descrition}
-            price={cost.price}
-          />
-        ))}
+        {filteredContent}
         {/* <Было так, так - не делаем> */
         /* <CostItem
           date={props.prmArrCost[0].date}
