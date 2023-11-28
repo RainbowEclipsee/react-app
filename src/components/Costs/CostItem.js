@@ -6,13 +6,15 @@ const CostItem = (props) => {
   // let descrition = props.descrition
 
   return (
-    <Card className="cost-item">
-      <CostDate date={props.date} />
-      <div className="cost-item_descrition">
-        <h2>{props.descrition}</h2>
-        <div className="cost-item_price">${props.price}</div>
-      </div>
-    </Card>
+    <li>
+      <Card className="cost-item">
+        <CostDate date={props.date} />
+        <div className="cost-item_descrition">
+          <h2>{props.descrition}</h2>
+          <div className="cost-item_price">${props.price}</div>
+        </div>
+      </Card>
+    </li>
   )
 }
 
