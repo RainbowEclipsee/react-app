@@ -4,7 +4,7 @@ import CostForm from './CostForm'
 
 const NewCost = (props) => {
 
-  const [formVisible, setFormVisible] = useState(false)
+  const [isVisibleForm, setIsVisibleForm] = useState(false)
 
   const saveCostFormDataHandler = (inputCostData) => {
     const costData = {
@@ -12,20 +12,21 @@ const NewCost = (props) => {
       id: Math.random().toString(),
     }
     props.onSaveNewCostData(costData)
+    setIsVisibleForm(false)
   }
 
-  const inputCostDataHandler = () => {
-    setFormVisible(true)
+  const btnCreateForm = () => {
+    setIsVisibleForm(true)
   }
 
-  const cancelCostHandler = () => {
-    setFormVisible(false)
+  const btnCancelForm = () => {
+    setIsVisibleForm(false)
   }
 
   return (
     <div className="new-cost">
-      {!formVisible && <button onClick={inputCostDataHandler}>Добавить новый расход</button>}
-      {formVisible && <CostForm onSaveCostFormData={saveCostFormDataHandler} onCancel={cancelCostHandler}/>}
+      {!isVisibleForm && <button onClick={btnCreateForm}>Добавить расход</button>}
+      {isVisibleForm && <CostForm onSaveCostFormData={saveCostFormDataHandler} onCancel={btnCancelForm}/>}
     </div>
   )
 }

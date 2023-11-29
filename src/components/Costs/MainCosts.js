@@ -3,6 +3,7 @@ import CostsFilter from './CostsFilter'
 import './MainCosts.css'
 import React, { useState } from 'react'
 import CostList from './CostList'
+import CostDiagram from './CostDiagram'
 
 
 const MainCosts = (props) => {
@@ -24,8 +25,7 @@ const MainCosts = (props) => {
       <Card className="costs">
         {/* Д.С year={changeYear} */}
         <CostsFilter year={changeYear} onChangeYear={yearChangeHandler} />
-        {/* Отрисовываем новый массив из существующего через map */}
-        {/* {filteredContent} */}
+        <CostDiagram prmArrCosts={arrCostsFilter}/>
         <CostList prmArrCosts={arrCostsFilter}/>
         {/* <Было так, так - не делаем> */
         /* <CostItem
