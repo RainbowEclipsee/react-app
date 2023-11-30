@@ -19,7 +19,7 @@ const CostDiagram = (props) => {
 
   for(const cost of props.prmArrCosts) {
     const costMonth = cost.date.getMonth()
-    diagramDataSets[costMonth].value += cost.amount;
+    diagramDataSets[costMonth].value += cost.price;
   }
 
   return <Diagram dataSets={diagramDataSets}/>
