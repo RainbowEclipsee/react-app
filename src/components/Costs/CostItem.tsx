@@ -2,7 +2,9 @@ import './CostItem.css'
 import CostDate from './CostDate'
 import Card from '../UI/Card'
 
-const CostItem = (props) => {
+import { Cost } from '../Types/types'
+
+const CostItem: React.FC<Cost> = (props) => {
   // let descrition = props.descrition
 
   return (

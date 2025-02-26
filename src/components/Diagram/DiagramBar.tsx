@@ -1,9 +1,12 @@
+import React from 'react'
 import './DiagramBar.css'
 
-const DiagramBar = (props) => {
+import { DiagramDataSets } from '../Types/types'
+
+const DiagramBar: React.FC<DiagramDataSets> = (props) => {
   let barFillHeight = '0%'
 
-  if (props.maxValue > 0) {
+  if (props.maxValue && props.maxValue > 0) {
     barFillHeight = Math.round(props.value /
     props.maxValue * 100) + '%'
   }

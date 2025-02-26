@@ -1,7 +1,13 @@
+import React from 'react'
 import './CostsFilter.css'
 
-const CostsFilter = (props) => {
-  const changeYearHandler = (event) => {
+interface CostsFilterProps {
+  year: string,
+  onChangeYear: (year: string) => void
+}
+
+const CostsFilter: React.FC<CostsFilterProps> = (props) => {
+  const changeYearHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
     props.onChangeYear(event.target.value)
   }
 

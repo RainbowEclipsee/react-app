@@ -1,10 +1,14 @@
 import CostItem from './CostItem'
 import './CostList.css';
 
-const CostList = (props) => {
+import { Cost } from '../Types/types';
 
-// Отрисовываем новый массив из существующего через map 
-// По мне так тернарным лучше
+interface CostListProps {
+  prmArrCosts: Cost[]
+}
+
+const CostList: React.FC<CostListProps> = (props) => {
+
   let CostItem_Filtered = 
   props.prmArrCosts.length === 0 ? 
   <b style={{color:'#2a5b84'}}> В этом году расходы отсутствуют </b> :

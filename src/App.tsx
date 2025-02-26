@@ -1,9 +1,10 @@
-// import CostItem from './components/CostItem'
 import MainCosts from './components/Costs/MainCosts'
 import NewCost from './components/NewCost/NewCost'
 import React, { useState } from 'react'
 
-const arrCosts = [
+import { Cost } from './components/Types/types'
+
+const arrCosts: Cost[] = [
   {
     id: '1',
     date: new Date(2023, 11, 9),
@@ -24,10 +25,10 @@ const arrCosts = [
   }
 ]
 
-const App = () => {
-  const [costs, setCosts] = useState(arrCosts)
+const App: React.FC = () => {
+  const [costs, setCosts] = useState<Cost[]>(arrCosts)
 
-  const saveNewCostDataHandler = (cost) => {
+  const saveNewCostDataHandler = (cost: Cost) => {
     setCosts((prevCosts) => {
       return [cost, ...prevCosts]
     })
